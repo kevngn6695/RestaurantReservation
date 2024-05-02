@@ -3,8 +3,8 @@ import React from "react";
 import { shallow } from "enzyme";
 import { expect } from "chai";
 
-import Register from "../components/Register";
+import List from "../components/List";
 
-describe("Register Component", () => {
+describe("List Component", () => {
   it("should...", () => {});
 });
