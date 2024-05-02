@@ -1,4 +1,4 @@
-import PropsTypes from "props-types";
+import PropsTypes from "prop-types";
 
 export const CommonProps = {
   className: PropsTypes.string,

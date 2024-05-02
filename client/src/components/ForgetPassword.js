@@ -1,7 +1,9 @@
 import React from "react";
 
-function ForgetPassword() {
-  return <div></div>;
+import "../assets/style/sass/components/forgetpassword.sass";
+
+function ForgetPassword(props) {
+  return <div className={props.className}>{props.children}</div>;
 }
 
-export default ForgetPassword;
+export default React.memo(ForgetPassword);

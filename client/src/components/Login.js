@@ -1,7 +1,9 @@
 import React from "react";
 
-function Login() {
-  return <div></div>;
+import "../assets/style/sass/components/login.sass";
+
+function Login(props) {
+  return <div className={props.className}>{props.children}</div>;
 }
 
-export default Login;
+export default React.memo(Login);

@@ -1,7 +1,9 @@
 import React from "react";
 
-function Logout() {
-  return <div></div>;
+import "../assets/style/sass/components/logout.sass";
+
+function Logout(props) {
+  return <div className={props.className}>{props.children}</div>;
 }
 
-export default Logout;
+export default React.memo(Logout);
