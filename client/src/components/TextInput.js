@@ -7,10 +7,24 @@ import "../assets/style/sass/components/textinput.sass";
 function TextInput(props) {
   return (
     <form className={props.classNameForm}>
-      <label className={props.classNameLabel} for="">
-        {props.text}
-      </label>
-      <input type={props.type} className={props.classNameInput} />
+      {props.ListInput.map((item) => {
+        <>
+          <label
+            className={`props.classNameLabel ${item.name}`}
+            for={item.name}
+          >
+            {item.text}
+          </label>
+          <input
+            type={item.type}
+            className={`props.classNameInput ${item.name}`}
+            placeholder={item.placeholder}
+            value={item.value}
+            required={item.required}
+            onChange={item.onChange}
+          />
+        </>;
+      })}
     </form>
   );
 }

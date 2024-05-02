@@ -4,7 +4,9 @@ import { FooterProps } from "../utils/type";
 
 function Footer(props) {
   return (
-    <footer className={`footer ${props.className}`}>{props.children}</footer>
+    <footer className={`footer ${props.className}`}>
+      <p></p>
+    </footer>
   );
 }
 

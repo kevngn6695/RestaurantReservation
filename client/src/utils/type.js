@@ -6,12 +6,30 @@ export const CommonProps = {
 
 export const ButtonProps = { ...CommonProps };
 
+export const NavbarProps = { ...CommonProps };
+
 export const ContainerProps = { ...CommonProps };
 
 export const FooterProps = { ...CommonProps };
 
 export const HeadingProps = { ...CommonProps };
 
+export const ListProps = { ...CommonProps };
+
+export const ParagraphProps = { ...CommonProps };
+
 export const TextInputProps = { ...CommonProps };
 
 export const WrapperProps = { ...CommonProps };
+
+export const LoadingProps = { ...CommonProps };
+
+export const LoginProps = { ...CommonProps };
+
+export const LogoutProps = { ...CommonProps };
+
+export const ForgetPasswordProps = { ...CommonProps };
+
+export const RegisterProps = { ...CommonProps };
+
+export const ForgotPasswordProps = { ...CommonProps };
