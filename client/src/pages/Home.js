@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function Home() {
-  return <div>Home</div>;
+import Loading from "../components/Loading";
+import Container from "../components/Container";
+
+function Home(props) {
+  return (
+    <>
+      {props.loading ? (
+        <Loading className={`home-loading-container`} />
+      ) : (
+        <Container className={props.className}>Home</Container>
+      )}
+    </>
+  );
 }
 
-export default Home;
+export default React.memo(Home);

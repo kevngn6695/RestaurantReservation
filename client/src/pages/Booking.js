@@ -1,7 +1,9 @@
 import React from "react";
 
-function Booking() {
-  return <div>Booking</div>;
+import Container from "../components/Container";
+
+function Booking(props) {
+  return <></>;
 }
 
 export default React.memo(Booking);
