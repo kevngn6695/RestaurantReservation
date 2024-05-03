@@ -14,18 +14,8 @@ export const generateListInput = (
   required: requried,
 });
 
-export const generateListItem = (
-  name,
-  type,
-  text,
-  placeholder,
-  requried,
-  onChange,
-) => ({
+export const generateListItem = (name, text, onChange) => ({
   name: `${name}`,
-  type: `${type}`,
   text: `${text}`,
-  placeholder: `${placeholder}`,
   onChange: onChange,
-  required: requried,
 });
