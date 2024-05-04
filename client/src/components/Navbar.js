@@ -21,12 +21,12 @@ function Navbar(props) {
   return (
     <Container className={props.className}>
       {/* Logo Section */}
-      <Wrapper className={`nav-logo-wrapper`}>
-        <Logo />
-        {/* Add today weather and time feature here... */}
-      </Wrapper>
+      {/* <Wrapper className={`nav-logo-wrapper`}>
+        <Logo /> */}
+      {/* Add today weather and time feature here... */}
+      {/* </Wrapper> */}
       <Wrapper className={`nav-item-wrapper`}>
-        <List ListItem={ListItem} />
+        <List className={`nav-item-list`} ListItem={ListItem} />
       </Wrapper>
       <Wrapper className={`nav-auth-btn-wrapper`}>
         <Button className={`nav-auth-btn`}>Login</Button>

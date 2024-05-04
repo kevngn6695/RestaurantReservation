@@ -16,6 +16,7 @@ export const generateListInput = (
 
 export const generateListItem = (name, text, onChange) => ({
   name: `${name}`,
+  className: `${name}`,
   text: `${text}`,
   onChange: onChange,
 });

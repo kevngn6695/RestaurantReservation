@@ -8,9 +8,9 @@ function List(props) {
   return (
     <ul className={props.className}>
       {props.ListItem.map((item) => (
-        <>
-          <li className={item.className}>{item.text}</li>
-        </>
+        <div className={`item-wrapper`}>
+          <li className={`item ${item.className}`}>{item.text}</li>
+        </div>
       ))}
     </ul>
   );
