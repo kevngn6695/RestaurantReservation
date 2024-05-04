@@ -1,18 +1,28 @@
-.nav-item-wrapper
-    width: 30%
-    border: 1px solid black
-    display: flex
-    flex-direction: row
-    justify-content: center
-    align-items: center
-    height: 2rem
-    border-radius: 30px
+@import "../utils/mixin.sass"
 
-.item-wrapper
+.nav-logo-wrpr
+    width: 5rem
+    position: absolute
+    left: 5%
+    @include flex-center(colum)
+    
+.nav-item-wrpr, .item-wrpr, .nav-auth-btn-wrpr
+    @include flex-center(row)
+    
+.nav-item-wrpr
+    width: 30%
+    height: 2rem
+
+.item-wrpr
     width: 5vh
     height: 5vh
-    display: flex
-    flex-direction: row
-    justify-content: center
-    align-items: center
     margin: 0 15px 0 15px
+    background: transparent
+    
+.nav-auth-btn-wrpr
+    width: 30vh
+    position: absolute
+    right: 5%
+ 
+    
+

@@ -1,8 +1,11 @@
+@import "../utils/mixin.sass"
+
 .nav-container
     width: 100%
-    border: 1px solid red
-    display: flex
-    justify-content: center
-    flex-direction: row
-    align-content: center
+    // border: 1px solid red
+    position: relative
+    background: transparent
+    top: 10px
+    @include disable-highlight
+    @include flex-center(row)
     

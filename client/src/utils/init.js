@@ -1,4 +1,4 @@
-export const generateListInput = (
+export const createListInput = (
   name,
   type,
   text,
@@ -14,9 +14,12 @@ export const generateListInput = (
   required: requried,
 });
 
-export const generateListItem = (name, text, onChange) => ({
+export const createListItem = (name, text, url, onChange) => ({
   name: `${name}`,
   className: `${name}`,
   text: `${text}`,
+  href: `${url}`,
   onChange: onChange,
 });
+
+export const createListRoute = () => ({});

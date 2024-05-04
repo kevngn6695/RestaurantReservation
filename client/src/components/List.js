@@ -8,8 +8,12 @@ function List(props) {
   return (
     <ul className={props.className}>
       {props.ListItem.map((item) => (
-        <div className={`item-wrapper`}>
-          <li className={`item ${item.className}`}>{item.text}</li>
+        <div className={`item-wrpr`}>
+          <li className={`item ${item.className}`}>
+            <a className={`item-link ${item.className}`} href={item.href}>
+              {item.text}
+            </a>
+          </li>
         </div>
       ))}
     </ul>

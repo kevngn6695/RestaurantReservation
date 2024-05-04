@@ -6,31 +6,31 @@ import Wrapper from "./Wrapper";
 import Logo from "./Logo";
 import Button from "./Button";
 
-import { generateListItem } from "../utils/init";
+import { createListItem } from "../utils/init";
 import { NavbarProps } from "../utils/type";
 
 import "../assets/style/sass/components/navbar.sass";
 
 function Navbar(props) {
   const ListItem = [
-    generateListItem("menu", "Menu"),
-    generateListItem("event", "Event"),
-    generateListItem("about", "About"),
-    generateListItem("blog", "Blog"),
+    createListItem("menu", "Menu"),
+    createListItem("event", "Event"),
+    createListItem("about", "About"),
+    createListItem("blog", "Blog"),
   ];
   return (
     <Container className={props.className}>
       {/* Logo Section */}
-      {/* <Wrapper className={`nav-logo-wrapper`}>
-        <Logo /> */}
-      {/* Add today weather and time feature here... */}
-      {/* </Wrapper> */}
-      <Wrapper className={`nav-item-wrapper`}>
+      <Wrapper className={`nav-logo-wrpr`}>
+        <Logo className={`logo`}>Logo</Logo>
+        {/* Add today weather and time feature here... */}
+      </Wrapper>
+      <Wrapper className={`nav-item-wrpr`}>
         <List className={`nav-item-list`} ListItem={ListItem} />
       </Wrapper>
-      <Wrapper className={`nav-auth-btn-wrapper`}>
-        <Button className={`nav-auth-btn`}>Login</Button>
-        <Button className={`nav-book-btn`}>Reservation</Button>
+      <Wrapper className={`nav-auth-btn-wrpr`}>
+        <Button className={`nav-btn book`}>Reservation</Button>
+        <Button className={`nav-btn setting`}></Button>
       </Wrapper>
     </Container>
   );

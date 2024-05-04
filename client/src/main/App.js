@@ -8,10 +8,17 @@ import Loading from "../components/Loading";
 
 import Home from "../pages/Home";
 import Booking from "../pages/Booking";
-import Payment from "../pages/Payment";
+import Blog from "../pages/Blog";
+import Event from "../pages/Event";
+import Menu from "../pages/Menu";
+import About from "../pages/About";
+
+import { createListRoute } from "../utils/init";
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  const ListRoute = [createListRoute()];
 
   useEffect(() => {
     setTimeout(() => {
@@ -28,19 +35,37 @@ function App() {
             <Route
               exact
               path="/"
-              element={<Home className="home-page-contianer" />}
+              element={<Home className="home-pge-contianer" />}
             />
 
             <Route
               exact
               path="/booking"
-              element={<Booking className="booking-page-contianer" />}
+              element={<Booking className="booking-pge-contianer" />}
             />
 
             <Route
               exact
-              path="/payment"
-              element={<Payment className="payment-page-contianer" />}
+              path="/menu"
+              element={<Menu className="menu-pge-contianer" />}
+            />
+
+            <Route
+              exact
+              path="/event"
+              element={<Event className="event-pge-contianer" />}
+            />
+
+            <Route
+              exact
+              path="/about"
+              element={<About className="about-pge-contianer" />}
+            />
+
+            <Route
+              exact
+              path="/blog"
+              element={<Blog className="blog-pge-contianer" />}
             />
           </Routes>
         </Router>

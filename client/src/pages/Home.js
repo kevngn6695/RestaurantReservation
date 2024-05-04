@@ -11,7 +11,7 @@ function Home(props) {
         <Loading className={`home-loading-container`} />
       ) : (
         <Container className={props.className}>
-          <Wrapper className={`home-wrapper`}></Wrapper>
+          <Wrapper className={`home-wrpr`}></Wrapper>
         </Container>
       )}
     </>
