@@ -6,17 +6,17 @@ import Wrapper from "./Wrapper";
 import Logo from "./Logo";
 import Button from "./Button";
 
-import { createListItem } from "../utils/init";
+import { createListMenuItem } from "../utils/init";
 import { NavbarProps } from "../utils/type";
 
 import "../assets/style/sass/components/navbar.sass";
 
 function Navbar(props) {
   const ListItem = [
-    createListItem("menu", "Menu"),
-    createListItem("event", "Event"),
-    createListItem("about", "About"),
-    createListItem("blog", "Blog"),
+    createListMenuItem("menu", "Menu"),
+    createListMenuItem("event", "Event"),
+    createListMenuItem("about", "About"),
+    createListMenuItem("blog", "Blog"),
   ];
   return (
     <Container className={props.className}>
@@ -30,7 +30,7 @@ function Navbar(props) {
       </Wrapper>
       <Wrapper className={`nav-auth-btn-wrpr`}>
         <Button className={`nav-btn book`}>Reservation</Button>
-        <Button className={`nav-btn setting`}></Button>
+        <Button className={`nav-btn drk-mode`}></Button>
       </Wrapper>
     </Container>
   );
