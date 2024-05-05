@@ -14,7 +14,15 @@ export const createListInput = (
   required: requried,
 });
 
-export const createListMenuItem = (name, text, url, onChange) => ({
+export const createListItem = (name, text, url, onChange) => ({
+  name: `${name}`,
+  className: `${name}`,
+  text: `${text}`,
+  href: `${url}`,
+  onChange: onChange,
+});
+
+export const createItem = (name, text, url, onChange) => ({
   name: `${name}`,
   className: `${name}`,
   text: `${text}`,

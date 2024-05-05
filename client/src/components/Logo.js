@@ -3,7 +3,11 @@ import React from "react";
 import "../assets/style/sass/components/logo.sass";
 
 function Logo(props) {
-  return <div className={props.className}>{props.children}</div>;
+  return (
+    <a href={props.href} {...props}>
+      {props.children}
+    </a>
+  );
 }
 
 export default React.memo(Logo);
