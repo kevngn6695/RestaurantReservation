@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import List from "./List";
 import Container from "./Container";
@@ -12,6 +12,8 @@ import { NavbarProps } from "../utils/type";
 import "../assets/style/sass/components/navbar.sass";
 
 function Navbar(props) {
+  const [activeLink, setActiveLink] = useState("");
+
   const listNavItem = [
     createListItem("menu", "Menu"),
     createListItem("event", "Event"),

@@ -16,6 +16,7 @@ export const createListInput = (
 
 export const createListItem = (name, text, url, onChange) => ({
   name: `${name}`,
+  id: `${name}`,
   className: `${name}`,
   text: `${text}`,
   href: `${url}`,

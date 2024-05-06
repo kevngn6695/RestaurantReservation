@@ -1,14 +1,15 @@
 @import "../utils/mixin.sass"
+    
+.nav-item-wrpr, .item-wrpr, .nav-auth-btn-wrpr
+    @include flex-center(row)
+
 
 .nav-logo-wrpr
     width: 5rem
     position: absolute
     left: 5%
     @include flex-center(colum)
-    
-.nav-item-wrpr, .item-wrpr, .nav-auth-btn-wrpr
-    @include flex-center(row)
-    
+
 .nav-item-wrpr
     width: 30%
     height: 2rem
@@ -25,4 +26,3 @@
     right: 5%
  
     
-

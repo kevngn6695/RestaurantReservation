@@ -69,7 +69,7 @@ function App() {
             />
           </Routes>
         </Router>
-        <Footer />
+        <Footer className="footer" />
       </Suspense>
     </div>
   );

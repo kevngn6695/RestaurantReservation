@@ -9,7 +9,7 @@ function List(props) {
     <ul className={props.className}>
       {props.listItem.map((item) => (
         <div className={`item-wrpr`}>
-          <li className={`item ${item.className}`}>
+          <li className={`item ${item.className} `}>
             <a className={`item-link ${item.className}`} href={item.href}>
               {item.text}
             </a>

@@ -1,7 +1,12 @@
 import React from "react";
+import Container from "./Container";
 
 function Contact(props) {
-  return <div>{props.children}</div>;
+  return (
+    <Container id={props.id} className={props.className}>
+      {props.children}
+    </Container>
+  );
 }
 
 export default React.memo(Contact);
