@@ -14,7 +14,7 @@ import NavScroll from "../components/NavScroll";
 function Home(props) {
   return (
     <>
-      <NavScroll className={`hm`} />
+      <NavScroll className={`hm-nav-scroll-container`} />
       {props.loading ? (
         <Loading className={`hm-loading-container`} />
       ) : (

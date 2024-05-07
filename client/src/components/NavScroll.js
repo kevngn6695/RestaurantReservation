@@ -29,6 +29,7 @@ function NavScroll(props) {
       }
     });
   };
+
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
@@ -38,10 +39,16 @@ function NavScroll(props) {
   }, []);
   return (
     <nav className={props.className}>
-      <ul>
+      <ul className="nav-scroll-list">
         {LinkList.map((item) => (
-          <li className={activeLink === item.className ? "active" : ""}>
-            <a href={`${item.href}`}>{item.text}</a>
+          <li
+            className={`nav-scroll-item ${
+              activeLink === item.className ? "active" : ""
+            }`}
+          >
+            <a className="nav-scroll-link" href={`${item.href}`}>
+              {item.text}
+            </a>
           </li>
         ))}
       </ul>
