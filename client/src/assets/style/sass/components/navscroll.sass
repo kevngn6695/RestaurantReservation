@@ -1,12 +1,30 @@
 @import "../utils/mixin"
+@import "../colors/colors"
 
 .nav-scroll-list
     width: 100%
     @include flex-center(column)
     .nav-scroll-item
         list-style-type: none
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        background-color: transparent
+        margin: 5px
+        border: 1px solid white
+        transition: all 0.5s ease-in-out
+        @include flex-center(column)
+        &:hover
+            border: 1px solid $buff
         
     .nav-scroll-link
         font-size: 10px
         text-decoration: none
         color: white
+
+.line
+    width: 50px
+    height: 0.5px
+    background-color: white
+    margin: 30px
+    transform: rotate(90deg)

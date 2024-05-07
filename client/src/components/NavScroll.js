@@ -8,11 +8,11 @@ function NavScroll(props) {
   const [activeLink, setActiveLink] = useState("");
 
   const LinkList = [
-    createListItem("txt-sect", "Home", "#txt-sect"),
-    createListItem("tp-spcl-sect", "Top Special", "#tp-spcl-sect"),
-    createListItem("ads-sect", "Ads", "#ads-sect"),
-    createListItem("wrk-hr-sect", "Working Hour", "#wrk-hr-sect"),
-    createListItem("contact-sect", "Contact", "#contact-sect"),
+    createListItem("txt-sect", ".", "#txt-sect"),
+    createListItem("tp-spcl-sect", "", "#tp-spcl-sect"),
+    createListItem("ads-sect", "", "#ads-sect"),
+    createListItem("wrk-hr-sect", "", "#wrk-hr-sect"),
+    createListItem("contact-sect", "", "#contact-sect"),
   ];
 
   const handleScroll = () => {
@@ -40,17 +40,20 @@ function NavScroll(props) {
   return (
     <nav className={props.className}>
       <ul className="nav-scroll-list">
+        <div className="line"></div>
         {LinkList.map((item) => (
-          <li
-            className={`nav-scroll-item ${
-              activeLink === item.className ? "active" : ""
-            }`}
-          >
+          <>
             <a className="nav-scroll-link" href={`${item.href}`}>
-              {item.text}
+              {/* {item.text} */}
+              <li
+                className={`nav-scroll-item ${
+                  activeLink === item.className ? "active" : ""
+                }`}
+              ></li>
             </a>
-          </li>
+          </>
         ))}
+        <div className="line"></div>
       </ul>
     </nav>
   );
