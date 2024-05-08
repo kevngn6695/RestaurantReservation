@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 
 import { createListItem } from "../utils/init";
 
+import { motion } from "framer-motion";
+
 import "../assets/style/sass/components/navscroll.sass";
 
 function NavScroll(props) {
   const [activeLink, setActiveLink] = useState("");
-  const [mouseOver, setMouseOver] = useState(false);
-
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltip, setTooltip] = useState("");
   const LinkList = [
     createListItem("txt-sect", "home", "#txt-sect"),
     createListItem("tp-spcl-sect", "", "#tp-spcl-sect"),
@@ -31,8 +33,16 @@ function NavScroll(props) {
     });
   };
 
-  const handleMouseOver = () => {
-    setMouseOver(true);
+  const handleTooltip = () => {
+    setShowTooltip(!showTooltip);
+  };
+
+  const handleTooltipMouseEnter = (text) => {
+    setTooltip(text);
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip("");
   };
 
   useEffect(() => {
@@ -43,32 +53,32 @@ function NavScroll(props) {
     };
   }, []);
   return (
-    <nav className={props.className}>
-      <ul className="nav-scroll-list">
-        <div className="line"></div>
+    <motion.nav className={props.className}>
+      <motion.ul className="nav-scroll-list">
+        <motion.div className="line"></motion.div>
         {LinkList.map((item) => (
           <>
-            <a
-              className="nav-scroll-link"
-              href={`${item.href}`}
-              onMouseMove={handleMouseOver}
-            >
+            <motion.a className="nav-scroll-link" href={`${item.href}`}>
               {/* {item.text} */}
-              <li
+              <motion.li
                 className={`nav-scroll-item ${
                   activeLink === item.className ? "active" : ""
-                }`}
+                } ${showTooltip ? "open" : "closed"} `}
+                onMouseEnter={() => handleTooltipMouseEnter(item.text)}
+                onMouseLeave={handleMouseLeave}
               >
-                {mouseOver && (
-                  <div className="nav-scroll-tltip">{item.text}</div>
+                {showTooltip === tooltip && (
+                  <motion.div className={`nav-scroll-tltip`}>
+                    {item.text}
+                  </motion.div>
                 )}
-              </li>
-            </a>
+              </motion.li>
+            </motion.a>
           </>
         ))}
         <div className="line"></div>
-      </ul>
-    </nav>
+      </motion.ul>
+    </motion.nav>
   );
 }
 
