@@ -6,9 +6,10 @@ import "../assets/style/sass/components/navscroll.sass";
 
 function NavScroll(props) {
   const [activeLink, setActiveLink] = useState("");
+  const [mouseOver, setMouseOver] = useState(false);
 
   const LinkList = [
-    createListItem("txt-sect", ".", "#txt-sect"),
+    createListItem("txt-sect", "home", "#txt-sect"),
     createListItem("tp-spcl-sect", "", "#tp-spcl-sect"),
     createListItem("ads-sect", "", "#ads-sect"),
     createListItem("wrk-hr-sect", "", "#wrk-hr-sect"),
@@ -30,6 +31,10 @@ function NavScroll(props) {
     });
   };
 
+  const handleMouseOver = () => {
+    setMouseOver(true);
+  };
+
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
@@ -43,13 +48,21 @@ function NavScroll(props) {
         <div className="line"></div>
         {LinkList.map((item) => (
           <>
-            <a className="nav-scroll-link" href={`${item.href}`}>
+            <a
+              className="nav-scroll-link"
+              href={`${item.href}`}
+              onMouseMove={handleMouseOver}
+            >
               {/* {item.text} */}
               <li
                 className={`nav-scroll-item ${
                   activeLink === item.className ? "active" : ""
                 }`}
-              ></li>
+              >
+                {mouseOver && (
+                  <div className="nav-scroll-tltip">{item.text}</div>
+                )}
+              </li>
             </a>
           </>
         ))}
