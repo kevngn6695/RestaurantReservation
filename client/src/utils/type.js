@@ -33,3 +33,9 @@ export const ForgetPasswordProps = { ...CommonProps };
 export const RegisterProps = { ...CommonProps };
 
 export const ForgotPasswordProps = { ...CommonProps };
+
+export const WorkingHourProps = { ...CommonProps };
+
+export const NavScrollProps = { ...CommonProps };
+
+export const ProgressBarProps = { ...CommonProps };

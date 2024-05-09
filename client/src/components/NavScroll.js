@@ -82,4 +82,5 @@ function NavScroll(props) {
   );
 }
 
+NavScroll.propTypes = {};
 export default React.memo(NavScroll);

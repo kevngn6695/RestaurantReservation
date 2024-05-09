@@ -10,7 +10,9 @@ import Image from "./Image";
 import "../assets/style/sass/components/topspecial.sass";
 
 function TopSpecial(props) {
-  const recommendations = [{ name: "", description: "", picUrl: "", price: 0 }];
+  const recommendations = [
+    { name: "willington", description: "willington", picUrl: "", price: 80 },
+  ];
   return (
     <Container id={props.id} className={props.className}>
       <Wrapper className="tp-spcl-wrpr">
@@ -48,5 +50,7 @@ function TopSpecial(props) {
     </Container>
   );
 }
+
+TopSpecial.propTypes = {};
 
 export default React.memo(TopSpecial);
