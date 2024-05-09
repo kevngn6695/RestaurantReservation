@@ -18,9 +18,9 @@ function Register(props) {
   const [error, setError] = useState("");
 
   const ListInput = [
-    generateListInput(),
-    generateListInput(),
-    generateListInput(),
+    generateListInput("email"),
+    generateListInput("pwrd"),
+    generateListInput("confirm-pwrd"),
   ];
 
   return (

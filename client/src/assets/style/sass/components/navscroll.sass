@@ -4,39 +4,33 @@
 .nav-scroll-list
     width: 100%
     @include flex-center(column)
+
     .nav-scroll-item
         list-style-type: none
-        width: 10px
-        height: 10px
-        border-radius: 50%
         background-color: transparent
         margin: 5px
         border: 1px solid white
         transition: all 0.5s ease-in-out
         @include flex-center(column)
+        @include cirle-shape(10px)
         &:hover
             border: 1px solid $buff
-            width: 20px
-            height: 20px
+            @include cirle-shape(20px)
         
     .nav-scroll-link
         font-size: 10px
         text-decoration: none
         color: white
+        
     .nav-scroll-tltip
         width: 50px
         height: 50px
         border: 1px solid white
-        border-top-left-radius: 30px
-        border-top-right-radius: 30px
-        border-bottom-right-radius: 30px
         position: relative
         left: 2.5rem
         bottom: 0.5rem
+        @include bubble-right(30px)
         @include flex-center(column)
-        
-
-        
 
 .line
     width: 50px
