@@ -11,6 +11,8 @@ import Contact from "../components/Contact";
 import WorkingHour from "../components/WorkingHour";
 import NavScroll from "../components/NavScroll";
 
+import Pic from "../assets/media/images/images/willington1.png";
+
 function Home(props) {
   return (
     <>
@@ -20,9 +22,11 @@ function Home(props) {
       ) : (
         <Container className={props.className}>
           <Container id={`txt-sect`} className={`hm-txt-container`}>
-            <Heading>Delious Meal Gets Together</Heading>
             <Wrapper className={`hm-pic-wrpr`}>
-              <Image className={`hm-pic`} />
+              <Heading className={`hm-heading`} h1>
+                Delious Meal Gets Together
+              </Heading>
+              <Image className={`hm-pic`} src={Pic} />
             </Wrapper>
           </Container>
           <TopSpecial id={`tp-spcl-sect`} className={`hm-tp-spcl-container`} />

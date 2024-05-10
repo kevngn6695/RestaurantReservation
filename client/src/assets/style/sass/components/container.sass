@@ -1,10 +1,12 @@
 @import "../utils/mixin.sass"
 
-
 .hm-txt-container, .hm-tp-spcl-container,.hm-wrk-hr-container, .hm-ads-container, .hm-contact-container
     width: 100%
     min-height: 100vh
-    border: 1px solid white
+    // border: 1px solid white
+    color: white
+    @include flex-center(column)
+
 
 .nav-container
     width: 100%
@@ -12,6 +14,7 @@
     position: absolute
     background: transparent
     top: 10px
+    color: white
     @include disable-highlight
     @include flex-center(row)
 
@@ -22,5 +25,6 @@
     left: 5%
     transform: translate(0, -50%)
     min-height: 50vh
+    color: white
     @include flex-center(columns)
     
