@@ -16,11 +16,11 @@ import Pic from "../assets/media/images/images/willington1.png";
 function Home(props) {
   return (
     <>
-      <NavScroll className={`hm-nav-scroll-container`} />
       {props.loading ? (
         <Loading className={`hm-loading-container`} />
       ) : (
         <Container className={props.className}>
+          <NavScroll className={`hm-nav-scroll-container`} />
           <Container id={`txt-sect`} className={`hm-txt-container`}>
             <Wrapper className={`hm-pic-wrpr`}>
               <Heading className={`hm-heading`} h1>

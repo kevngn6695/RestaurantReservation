@@ -4,16 +4,16 @@
     @include flex-center(row)
 
 .hm-pic-wrpr
-    width: 90%
+    width: 80%
     min-height: 80vh
-    background: rgba( 255, 255, 255, 0.05 )
-    box-shadow: 2px 8px 17px 6px rgba(0,0,0,0.1)
-    backdrop-filter: blur( 2.5px )
-    -webkit-backdrop-filter: blur( 2.5px )
     border-radius: 40px
-    z-index: -1
     @include flex-center(row)
-    
+    transition: all 0.5s ease-in-out
+    &:hover
+        background: rgba( 255, 255, 255, 0.05 )
+        backdrop-filter: blur( 2.5px )
+        -webkit-backdrop-filter: blur( 2.5px )
+        box-shadow: 2px 8px 17px 6px rgba(0,0,0,0.6)
 
 .nav-logo-wrpr
     width: 5rem
