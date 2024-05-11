@@ -13,14 +13,13 @@ function NavScroll(props) {
   const LinkList = [
     createListItem("txt-sect", "home", "#txt-sect"),
     createListItem("tp-spcl-sect", "", "#tp-spcl-sect"),
-    createListItem("ads-sect", "", "#ads-sect"),
     createListItem("wrk-hr-sect", "", "#wrk-hr-sect"),
+    createListItem("ads-sect", "", "#ads-sect"),
     createListItem("contact-sect", "", "#contact-sect"),
   ];
 
   const handleScroll = () => {
     const scrollPos = window.scrollY;
-
     const sections = document.querySelectorAll("section");
 
     sections.forEach((section) => {

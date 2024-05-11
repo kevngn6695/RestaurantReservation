@@ -8,10 +8,12 @@ import Wrapper from "../components/Wrapper";
 import Image from "../components/Image";
 import Ads from "../components/Ads";
 import Contact from "../components/Contact";
+import Button from "../components/Button";
 import WorkingHour from "../components/WorkingHour";
 import NavScroll from "../components/NavScroll";
 
 import Pic from "../assets/media/images/images/willington1.png";
+import { WrapperProps } from "../utils/type";
 
 function Home(props) {
   return (
@@ -23,9 +25,12 @@ function Home(props) {
           <NavScroll className={`hm-nav-scroll-container`} />
           <Container id={`txt-sect`} className={`hm-txt-container`}>
             <Wrapper className={`hm-pic-wrpr`}>
-              <Heading className={`hm-heading`} h1>
-                Delious Meal Gets Together
-              </Heading>
+              <Wrapper className={`hm-heading-wrpr`}>
+                <Heading className={`hm-heading`} h1>
+                  Delious Meal Gets Together
+                </Heading>
+                <Button className={`hm-menu-nav-btn`}>View Menu</Button>
+              </Wrapper>
               <Image className={`hm-pic`} src={Pic} />
             </Wrapper>
           </Container>
