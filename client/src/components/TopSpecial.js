@@ -8,10 +8,11 @@ import Container from "./Container";
 import Image from "./Image";
 
 import "../assets/style/sass/components/topspecial.sass";
+import Courasels from "./Courasels";
 
 function TopSpecial(props) {
-  const recommendations = [
-    { name: "willington", description: "willington", picUrl: "", price: 80 },
+  const foodList = [
+    { name: "wellington", description: "wellington", picUrl: "", price: 80 },
   ];
   return (
     <Container id={props.id} className={props.className}>
@@ -25,26 +26,8 @@ function TopSpecial(props) {
           <Paragraph></Paragraph>
         </Wrapper>
 
-        <Wrapper className="tp-spcl-list">
-          {recommendations.map((food) => (
-            <>
-              <Card className={`tp-spcl-card`}>
-                <Wrapper className="tp-spcl-pic-wrpr">
-                  <Image className="tp-spcl-img" url={food.picUrl} />
-                </Wrapper>
-
-                <Wrapper className="tp-spcl-fd-info-wrpr">
-                  <Wrapper className="tp-spcl-fd-info">
-                    <Heading className="tp-spcl-fd-ttl">{food.name}</Heading>
-                    <Heading className="tp-spcl-fd-price">{`${food.price}`}</Heading>
-                  </Wrapper>
-                  <Paragraph className="tp-spcl-fd-description">
-                    {food.description}
-                  </Paragraph>
-                </Wrapper>
-              </Card>
-            </>
-          ))}
+        <Wrapper className="tp-spcl-list-wrpr">
+          <Courasels foodList={foodList} />
         </Wrapper>
       </Wrapper>
     </Container>

@@ -1,9 +1,7 @@
 import React from "react";
 
-import Wrapper from "./Wrapper";
-
 function Pricetag(props) {
-  return <Wrapper className={props.className}>{props.children}</Wrapper>;
+  return <div className={props.className}>{props.price}</div>;
 }
 
 export default React.memo(Pricetag);
