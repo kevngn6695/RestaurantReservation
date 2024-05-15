@@ -13,6 +13,7 @@ import { TopSpecialProps } from "../utils/type";
 import "../assets/style/sass/components/topspecial.sass";
 
 function TopSpecial(props) {
+  const tabList = [];
   const foodList = [
     { name: "wellington", description: "wellington", picUrl: "", price: 80 },
   ];
@@ -20,7 +21,7 @@ function TopSpecial(props) {
     <Container id={props.id} className={props.className}>
       <Wrapper className="tp-spcl-wrpr">
         <Wrapper>
-          <Tab />
+          <Tab tabList={tabList} />
         </Wrapper>
         <Wrapper className="tp-spcl-food-wrpr">
           <Card className="tp-spcl-food" />
