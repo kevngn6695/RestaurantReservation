@@ -39,3 +39,5 @@ export const WorkingHourProps = { ...CommonProps };
 export const NavScrollProps = { ...CommonProps };
 
 export const ProgressBarProps = { ...CommonProps };
+
+export const TopSpecialProps = { ...CommonProps };

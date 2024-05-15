@@ -5,10 +5,12 @@ import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import Card from "./Card";
 import Container from "./Container";
-import Image from "./Image";
+import Courasels from "./Courasels";
+import Tab from "./Tab";
+
+import { TopSpecialProps } from "../utils/type";
 
 import "../assets/style/sass/components/topspecial.sass";
-import Courasels from "./Courasels";
 
 function TopSpecial(props) {
   const foodList = [
@@ -17,6 +19,9 @@ function TopSpecial(props) {
   return (
     <Container id={props.id} className={props.className}>
       <Wrapper className="tp-spcl-wrpr">
+        <Wrapper>
+          <Tab />
+        </Wrapper>
         <Wrapper className="tp-spcl-food-wrpr">
           <Card className="tp-spcl-food" />
         </Wrapper>
@@ -34,6 +39,6 @@ function TopSpecial(props) {
   );
 }
 
-TopSpecial.propTypes = {};
+TopSpecial.propTypes = TopSpecialProps;
 
 export default React.memo(TopSpecial);
