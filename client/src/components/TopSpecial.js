@@ -1,4 +1,5 @@
 import React from "react";
+import { useLazyLoad } from "../utils/function";
 
 import Wrapper from "./Wrapper";
 import Heading from "./Heading";
@@ -9,8 +10,17 @@ import Courasels from "./Courasels";
 import Tab from "./Tab";
 
 import { TopSpecialProps } from "../utils/type";
+import { importAll } from "../utils/import";
 
 import "../assets/style/sass/components/topspecial.sass";
+
+const images = importAll(
+  require.context(
+    "../assets/media/images/images/tp-spcl-food/",
+    false,
+    /\.(png|jpe?g|svg)$/,
+  ),
+);
 
 function TopSpecial(props) {
   const tabList = [];
@@ -22,9 +32,6 @@ function TopSpecial(props) {
       <Wrapper className="tp-spcl-wrpr">
         <Wrapper>
           <Tab tabList={tabList} />
-        </Wrapper>
-        <Wrapper className="tp-spcl-food-wrpr">
-          <Card className="tp-spcl-food" />
         </Wrapper>
 
         <Wrapper className="tp-spcl-ttl-wrpr">
