@@ -6,18 +6,20 @@ import Wrapper from "./Wrapper";
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import Image from "./Image";
-
-import "../assets/style/sass/components/courasel.sass";
 import Pricetag from "./Pricetag";
 
+import "../assets/style/sass/components/courasel.sass";
+
 function Courasels(props) {
+  console.log("Food List in Courasels:", props.foodList); // Debugging: Log the food list
+
   return (
     <Container className={props.className}>
-      {props.foodList.map((food) => (
-        <>
+      {props.foodList.map((food, i) => (
+        <React.Fragment key={i}>
           <Card className={`tp-spcl-card`}>
             <Wrapper className="tp-spcl-pic-wrpr">
-              <Image className="tp-spcl-img" url={food.picUrl} />
+              <Image className="tp-spcl-img" src={food.picUrl} />
             </Wrapper>
 
             <Wrapper className="tp-spcl-fd-info-wrpr">
@@ -33,7 +35,7 @@ function Courasels(props) {
           <Wrapper className="tp-spcl-price-wrpr">
             <Pricetag className="tp-spcl-price-tag" price={food.price} />
           </Wrapper>
-        </>
+        </React.Fragment>
       ))}
     </Container>
   );
