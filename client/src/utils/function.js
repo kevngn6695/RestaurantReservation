@@ -8,6 +8,14 @@ export const convertKtoF = (kelvin) => {
   return Math.round(((kelvin - 273.15) * 9) / 5 + 32);
 };
 
+export const removeLastCapitalizedRest = (string) => {
+  return string
+    .split("-")
+    .slice(0, -1) // Remove the last word
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
 export const useLazyLoad = (options) => {
   const [isIntersecting, setIntersecting] = useState(false);
   const ref = useRef(null);

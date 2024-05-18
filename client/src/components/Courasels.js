@@ -8,10 +8,12 @@ import Paragraph from "./Paragraph";
 import Image from "./Image";
 import Pricetag from "./Pricetag";
 
+import { removeLastCapitalizedRest } from "../utils/function";
+
 import "../assets/style/sass/components/courasel.sass";
 
 function Courasels(props) {
-  console.log("Food List in Courasels:", props.foodList); // Debugging: Log the food list
+  //   console.log("Food List in Courasels:", props.foodList); // Debugging: Log the food list
 
   return (
     <Container className={props.className}>
@@ -24,17 +26,19 @@ function Courasels(props) {
 
             <Wrapper className="tp-spcl-fd-info-wrpr">
               <Wrapper className="tp-spcl-fd-info">
-                <Heading className="tp-spcl-fd-ttl">{food.name}</Heading>
+                <Heading className="tp-spcl-fd-ttl" h1>
+                  {removeLastCapitalizedRest(food.name)}
+                </Heading>
                 <Heading className="tp-spcl-fd-price">{`${food.price}`}</Heading>
               </Wrapper>
               <Paragraph className="tp-spcl-fd-description">
                 {food.description}
               </Paragraph>
             </Wrapper>
+            <Wrapper className="tp-spcl-price-wrpr">
+              <Pricetag className="tp-spcl-price-tag" price={food.price} />
+            </Wrapper>
           </Card>
-          <Wrapper className="tp-spcl-price-wrpr">
-            <Pricetag className="tp-spcl-price-tag" price={food.price} />
-          </Wrapper>
         </React.Fragment>
       ))}
     </Container>

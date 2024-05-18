@@ -24,7 +24,7 @@ function Home(props) {
         <Container className={props.className}>
           <NavScroll className={`hm-nav-scroll-container`} />
           <Container id={`txt-sect`} className={`hm-txt-container`}>
-            <Wrapper className={`hm-pic-wrpr`}>
+            <Wrapper className={`hm-wrpr`}>
               <Wrapper className={`hm-heading-wrpr`}>
                 <Heading className={`hm-heading`} h1>
                   Delious Meal Gets Together
