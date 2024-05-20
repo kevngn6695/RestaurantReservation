@@ -17,6 +17,7 @@ import { TopSpecialProps } from "../utils/type";
 import "../assets/style/sass/components/topspecial.sass";
 
 function TopSpecial(props) {
+  const totalPages = 2;
   const foodList = [
     {
       name: "wellington-steak-meal",
@@ -54,7 +55,11 @@ function TopSpecial(props) {
     <Container id={props.id} className={props.className}>
       <Wrapper className="tp-spcl-wrpr">
         <Wrapper className="tp-spcl-list-wrpr">
-          <Courasels className="tp-spcl-carousel" foodList={foodList} />
+          <Courasels
+            className="tp-spcl-carousel"
+            foodList={foodList}
+            totalPages={totalPages}
+          />
         </Wrapper>
         <Wrapper className="tp-spcl-ttl-wrpr">
           <Heading h1>Top Choices in Town</Heading>
