@@ -6,7 +6,7 @@ import "../assets/style/sass/components/pagination.sass";
 
 function Pagination(props) {
   return (
-    <div className="pagination">
+    <React.Fragment>
       {Array.from({ length: props.pages }).map((_, i) => (
         <Button
           key={i}
@@ -16,7 +16,7 @@ function Pagination(props) {
           {i + 1}
         </Button>
       ))}
-    </div>
+    </React.Fragment>
   );
 }
 

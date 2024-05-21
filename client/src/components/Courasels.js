@@ -7,28 +7,49 @@ import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import Image from "./Image";
 import Button from "./Button";
+import Pagination from "./Pagination";
 
 import { removeLastCapitalizedRest } from "../utils/function";
 
 import "../assets/style/sass/components/courasel.sass";
-import Pagination from "./Pagination";
 
 function Courasels(props) {
   const itemsPerPage = 2; // Show 2 items per page
   const totalPages = Math.ceil(props.foodList.length / itemsPerPage);
 
   const [current, setCurrent] = useState(0);
+  const [slideDirection, setSlideDirection] = useState("");
+  const [exitingCards, setExitingCards] = useState([]);
 
   const handlePrev = () => {
-    setCurrent((i) => (i === 0 ? totalPages - 1 : i - 1));
+    setSlideDirection("slide-fade-in-right");
+    setExitingCards([current * itemsPerPage, current * itemsPerPage + 1]); // Both cards will exit
+    setTimeout(() => {
+      setCurrent((i) => (i === 0 ? totalPages - 1 : i - 1));
+      setExitingCards([]);
+    }, 500);
   };
 
   const handleNext = () => {
-    setCurrent((i) => (i === totalPages - 1 ? 0 : i + 1));
+    setSlideDirection("slide-fade-in-left");
+    setExitingCards([current * itemsPerPage, current * itemsPerPage + 1]); // Both cards will exit
+    setTimeout(() => {
+      setCurrent((i) => (i === totalPages - 1 ? 0 : i + 1));
+      setExitingCards([]);
+    }, 500);
   };
 
   const handlePageClick = (pageIndex) => {
-    setCurrent(pageIndex);
+    if (pageIndex > current) {
+      setSlideDirection("slide-fade-in-left");
+    } else {
+      setSlideDirection("slide-fade-in-right");
+    }
+    setExitingCards([current * itemsPerPage, current * itemsPerPage + 1]); // Both cards will exit
+    setTimeout(() => {
+      setCurrent(pageIndex);
+      setExitingCards([]);
+    }, 500);
   };
 
   const isVisible = (index) => {
@@ -39,12 +60,29 @@ function Courasels(props) {
 
   return (
     <Container className={props.className}>
-      <Button className={`tp-spcl-btn prev`} onClick={handlePrev}></Button>
-      <Wrapper className="tp-spcl-card-wrpr">
-        {props.foodList.map(
-          (food, i) =>
-            isVisible(i) && (
-              <Card className={`tp-spcl-card`} key={i}>
+      <Wrapper className={`tp-spcl-carousel-wrpr`}>
+        <Button className={`tp-spcl-btn prev`} onClick={handlePrev}></Button>
+        <Wrapper className="tp-spcl-card-wrpr">
+          {props.foodList.map((food, i) => {
+            const isVisibleCard = isVisible(i);
+            const isExitingCard = exitingCards.includes(i);
+            let animationClass = "";
+
+            if (isExitingCard) {
+              animationClass =
+                slideDirection === "slide-fade-in-left"
+                  ? "slide-fade-out-left"
+                  : "slide-fade-out-right";
+            } else if (isVisibleCard) {
+              animationClass = slideDirection;
+            }
+
+            return isVisibleCard || isExitingCard ? (
+              <Card
+                className={`tp-spcl-card ${animationClass}`}
+                onAnimationEnd={() => setSlideDirection("")}
+                key={i}
+              >
                 <Wrapper className="tp-spcl-pic-wrpr">
                   <Image className="tp-spcl-img" src={food.picUrl} />
                 </Wrapper>
@@ -60,16 +98,20 @@ function Courasels(props) {
                   </Paragraph>
                 </Wrapper>
               </Card>
-            ),
-        )}
+            ) : null;
+          })}
+        </Wrapper>
+        <Button className={`tp-spcl-btn next`} onClick={handleNext}></Button>
       </Wrapper>
-      <Pagination
-        pages={totalPages}
-        current={current}
-        setCurrent={setCurrent}
-        handlePageClick={handlePageClick}
-      />
-      <Button className={`tp-spcl-btn next`} onClick={handleNext}></Button>
+
+      <Wrapper className="tp-spcl-pagination-wrpr">
+        <Pagination
+          pages={totalPages}
+          current={current}
+          setCurrent={setCurrent}
+          handlePageClick={handlePageClick}
+        />
+      </Wrapper>
     </Container>
   );
 }

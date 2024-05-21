@@ -1,4 +1,5 @@
 @import "../utils/mixin"
+@import "../animations/keyframe"
 
 .tp-spcl-card
     width: 27.5vh
@@ -8,6 +9,18 @@
     background: rgba( 255, 255, 255, 0.05 )
     backdrop-filter: blur( 2.5px )
     -webkit-backdrop-filter: blur( 2.5px )
-    box-shadow: 2px 8px 17px 6px rgba(0,0,0,0.6)
+    transition: transform,box-shadow 0.5s ease-in-out
     @include flex-center(column)
+
+    &:hover
+        box-shadow: 2px 8px 17px 6px rgba(0,0,0,0.6)
+.slide-fade-in-left
+    animation: slide-left-fade-in 0.5s forwards
+.slide-fade-in-right
+    animation: slide-right-fade-in 0.5s forwards    
+.slide-fade-out-left
+    animation: slide-left-fade-out 0.5s forwards
+.slide-fade-out-right
+    animation: slide-right-fade-out 0.5s forwards
+
     
