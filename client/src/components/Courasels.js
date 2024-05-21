@@ -39,9 +39,7 @@ function Courasels(props) {
 
   return (
     <Container className={props.className}>
-      <Button className={`tp-spcl-btn prev`} onClick={handlePrev}>
-        Prev
-      </Button>
+      <Button className={`tp-spcl-btn prev`} onClick={handlePrev}></Button>
       <Wrapper className="tp-spcl-card-wrpr">
         {props.foodList.map(
           (food, i) =>
@@ -52,12 +50,11 @@ function Courasels(props) {
                 </Wrapper>
 
                 <Wrapper className="tp-spcl-fd-info-wrpr">
-                  <Wrapper className="tp-spcl-fd-info">
-                    <Heading className="tp-spcl-fd-ttl" h1>
-                      {removeLastCapitalizedRest(food.name)}
-                    </Heading>
-                    <Heading className="tp-spcl-fd-price">{`${food.price}`}</Heading>
-                  </Wrapper>
+                  <Heading className="tp-spcl-fd-ttl" h1>
+                    {removeLastCapitalizedRest(food.name)}
+                  </Heading>
+                  <Heading className="tp-spcl-fd-price">{`${food.price}`}</Heading>
+
                   <Paragraph className="tp-spcl-fd-description">
                     {food.description}
                   </Paragraph>
@@ -72,9 +69,7 @@ function Courasels(props) {
         setCurrent={setCurrent}
         handlePageClick={handlePageClick}
       />
-      <Button className={`tp-spcl-btn next`} onClick={handleNext}>
-        Next
-      </Button>
+      <Button className={`tp-spcl-btn next`} onClick={handleNext}></Button>
     </Container>
   );
 }

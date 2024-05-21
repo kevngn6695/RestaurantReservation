@@ -3,6 +3,29 @@
     flex-direction: $direction
     justify-content: center
     align-items: center
+    
+@mixin flex-right($direction)
+    display: flex
+    flex-direction: $direction
+    justify-content: flex-end
+    align-items: center
+
+@mixin flex-left($direction)
+    display: flex
+    flex-direction: $direction
+    justify-content: flex-start
+    align-items: center
+
+// Dynamic flex alignment mixin
+// Parameters:
+// $direction: Sets the flex direction. Options: 'row', 'column'.
+// $justify: Sets the justification (alignment) along the main axis. Options: 'center', 'flex-start', 'flex-end'.
+
+@mixin flex-align($direction, $justify)
+    display: flex
+    flex-direction: $direction
+    justify-content: $justify
+    align-items: center // Aligns items along the cross axis
 
 @mixin disable-highlight
     -webkit-user-select: none // Safari
