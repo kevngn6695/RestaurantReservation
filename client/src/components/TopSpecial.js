@@ -62,7 +62,9 @@ function TopSpecial(props) {
           />
         </Wrapper>
         <Wrapper className="tp-spcl-ttl-wrpr">
-          <Heading h1>Top Choices in Town</Heading>
+          <Heading className={`tp-spcl-ttl`} h1>
+            Top Choices in Town
+          </Heading>
           <Paragraph></Paragraph>
         </Wrapper>
       </Wrapper>
