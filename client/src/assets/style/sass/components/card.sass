@@ -9,9 +9,10 @@
     background: rgba( 255, 255, 255, 0.05 )
     backdrop-filter: blur( 2.5px )
     -webkit-backdrop-filter: blur( 2.5px )
+    position: relative
+    z-index: 2
     transition: transform,box-shadow 0.5s ease-in-out
     @include flex-center(column)
-
     &:hover
         box-shadow: 2px 8px 17px 6px rgba(0,0,0,0.6)
 .slide-fade-in-left

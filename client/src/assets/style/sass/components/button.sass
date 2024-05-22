@@ -45,10 +45,13 @@
     border: none
     position: relative
     bottom: 30px
-    background: rgba( 255, 255, 255, 0.05 )
+    margin: 0 55px 0 55px
+    background: $chumbo
     backdrop-filter: blur( 2.5px )
     -webkit-backdrop-filter: blur( 2.5px )
-    transition: all 0.5s ease-in-out
+    transition: box-shadow 0.5s ease-in-out
+    box-shadow: none
     &:hover
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6)
-    
+        box-shadow: inset 5px -5px 10px #252525, inset -5px 5px 10px #333333
+    &:active
+        box-shadow:  5px -5px 10px #252525, -5px 5px 10px #333333

@@ -1,7 +1,24 @@
 @import "../utils/mixin.sass"
     
-.nav-item-wrpr, .item-wrpr, .nav-auth-btn-wrpr
+.nav-item-wrpr,
+.tp-spcl-carousel-wrpr, 
+.item-wrpr, 
+.nav-auth-btn-wrpr, 
+.tp-spcl-wrpr, 
+.tp-spcl-card-wrpr
     @include flex-center(row)
+
+.tp-spcl-pagination-wrpr,
+.tp-spcl-carousel-wrpr,
+.tp-spcl-wrpr
+    width: 100%
+
+.hm-heading-wrpr,
+.tp-spcl-pic-wrpr,
+.tp-spcl-fd-info-wrpr,
+.tp-spcl-card-wrpr,
+.tp-spcl-pic-wrpr
+    position: relative
 
 .hm-wrpr
     width: 80%
@@ -35,22 +52,15 @@
     width: 30vh
     position: absolute
     right: 5%
- 
-    
+
+
 .hm-heading-wrpr
     width: 30%
-    position: relative
     left: -5%
 
 .tp-spcl-pic-wrpr
-    position: relative
     bottom: 50px
 
-.tp-spcl-wrpr
-    width: 100%
-    @include flex-center(row)
-    
-    
 .tp-spcl-list-wrpr
     width: 60%
     @include flex-left(column)
@@ -58,23 +68,14 @@
 
 .tp-spcl-fd-info-wrpr
     width: 80%
-    // border: 1px solid red
-    position: relative
-    bottom: 40%
+    bottom: 4rem
     padding: 15px
 
 .tp-spcl-card-wrpr
     width: 50%
-    position: relative
-    @include flex-center(row)
 
 .tp-spcl-pic-wrpr
-    position: relative
     bottom: 3.5rem
-
-.tp-spcl-fd-info-wrpr
-    position: relative
-    bottom: 4rem
 
 .tp-spcl-ttl-wrpr
     width: 30%
@@ -82,12 +83,8 @@
     
     
 .tp-spcl-pagination-wrpr
-    width: 100%
     padding: 15px 0 15px 0
     @include flex-center(colum)
 
-.tp-spcl-carousel-wrpr
-    width: 100%
-    @include flex-center(row)
     
     
