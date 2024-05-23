@@ -7,7 +7,11 @@ import { motion } from "framer-motion";
 import "../assets/style/sass/components/wrapper.sass";
 
 function Wrapper(props) {
-  return <motion.div className={props.className}>{props.children}</motion.div>;
+  return (
+    <motion.div className={props.className} {...props}>
+      {props.children}
+    </motion.div>
+  );
 }
 
 Wrapper.propTypes = WrapperProps;

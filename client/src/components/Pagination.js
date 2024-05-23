@@ -6,14 +6,18 @@ import "../assets/style/sass/components/pagination.sass";
 
 function Pagination(props) {
   return (
-    <React.Fragment>
+    <React.Fragment className={props.className}>
       {Array.from({ length: props.pages }).map((_, i) => (
         <Button
           key={i}
-          className={i === props.current ? "active" : ""}
+          className={`pag-btn ${i === props.current ? "active" : ""}`}
           onClick={() => props.handlePageClick(i)}
         >
-          {i + 1}
+          <span
+            className={`pag-indicator ${
+              i === props.current ? "pag-indicator-animate" : ""
+            }`}
+          />
         </Button>
       ))}
     </React.Fragment>

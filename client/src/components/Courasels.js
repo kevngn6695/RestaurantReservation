@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Card from "./Card";
 import Container from "./Container";
@@ -20,26 +20,32 @@ function Courasels(props) {
   const [current, setCurrent] = useState(0);
   const [slideDirection, setSlideDirection] = useState("");
   const [exitingCards, setExitingCards] = useState([]);
+  const [autoSlide, setAutoSlide] = useState(true);
 
   const handlePrev = () => {
+    setAutoSlide(false); // Disable autoplay on manual interaction
     setSlideDirection("slide-fade-in-right");
     setExitingCards([current * itemsPerPage, current * itemsPerPage + 1]); // Both cards will exit
     setTimeout(() => {
       setCurrent((i) => (i === 0 ? totalPages - 1 : i - 1));
       setExitingCards([]);
+      setAutoSlide(true); // Re-enable autoplay
     }, 500);
   };
 
   const handleNext = () => {
+    setAutoSlide(false); // Disable autoplay on manual interaction
     setSlideDirection("slide-fade-in-left");
     setExitingCards([current * itemsPerPage, current * itemsPerPage + 1]); // Both cards will exit
     setTimeout(() => {
       setCurrent((i) => (i === totalPages - 1 ? 0 : i + 1));
       setExitingCards([]);
+      setAutoSlide(true); // Re-enable autoplay
     }, 500);
   };
 
   const handlePageClick = (pageIndex) => {
+    setAutoSlide(false); // Disable autoplay on manual interaction
     if (pageIndex > current) {
       setSlideDirection("slide-fade-in-left");
     } else {
@@ -49,20 +55,35 @@ function Courasels(props) {
     setTimeout(() => {
       setCurrent(pageIndex);
       setExitingCards([]);
+      setAutoSlide(true); // Re-enable autoplay
     }, 500);
   };
 
   const isVisible = (index) => {
     const startIndex = current * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return index >= startIndex && index < endIndex;
+    return index >= startIndex && index < endIndex; // Check if card is within visible range
   };
+
+  useEffect(() => {
+    let interval;
+    if (autoSlide) {
+      interval = setInterval(() => {
+        handleNext();
+      }, 3000); // Automatically move to next card every 3 seconds
+    }
+    return () => clearInterval(interval); // Clear interval on component unmount or when autoSlide changes
+  }, [current, autoSlide]);
 
   return (
     <Container className={props.className}>
       <Wrapper className={`tp-spcl-carousel-wrpr`}>
         <Button className={`tp-spcl-btn prev`} onClick={handlePrev}></Button>
-        <Wrapper className="tp-spcl-card-wrpr">
+        <Wrapper
+          className="tp-spcl-card-wrpr"
+          onMouseEnter={() => setAutoSlide(false)} // Stop autoplay on hover
+          onMouseLeave={() => setAutoSlide(true)} // Resume autoplay when hover ends
+        >
           {props.foodList.map((food, i) => {
             const isVisibleCard = isVisible(i);
             const isExitingCard = exitingCards.includes(i);
@@ -108,7 +129,6 @@ function Courasels(props) {
         <Pagination
           pages={totalPages}
           current={current}
-          setCurrent={setCurrent}
           handlePageClick={handlePageClick}
         />
       </Wrapper>
