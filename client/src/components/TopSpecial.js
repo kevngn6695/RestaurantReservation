@@ -65,7 +65,10 @@ function TopSpecial(props) {
           <Heading className={`tp-spcl-ttl`} h1>
             Top Choices in Town
           </Heading>
-          <Paragraph></Paragraph>
+          <Paragraph className="tp-spcl-paragrph">
+            Gourmet Beef Wellington is a top choice for food, featuring tender
+            beef fillet wrapped in puff pastry with a rich mushroom duxelles
+          </Paragraph>
         </Wrapper>
       </Wrapper>
     </Container>
