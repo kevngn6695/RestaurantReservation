@@ -63,11 +63,12 @@ function TopSpecial(props) {
         </Wrapper>
         <Wrapper className="tp-spcl-ttl-wrpr">
           <Heading className={`tp-spcl-ttl`} h1>
-            Top Choices in Town
+            We have top delicious choices in town
           </Heading>
           <Paragraph className="tp-spcl-paragrph">
-            Gourmet Beef Wellington is a top choice for food, featuring tender
-            beef fillet wrapped in puff pastry with a rich mushroom duxelles
+            Beef Wellington is a top culinary choice, known for its luxurious
+            combination of tender beef fillet encased in a layer of savory
+            mushroom duxelles and wrapped in golden, flaky puff pastry.
           </Paragraph>
         </Wrapper>
       </Wrapper>

@@ -13,7 +13,7 @@ function NavScroll(props) {
   const LinkList = [
     createListItem("txt-sect", "home", "#txt-sect"),
     createListItem("tp-spcl-sect", "", "#tp-spcl-sect"),
-    createListItem("wrk-hr-sect", "", "#wrk-hr-sect"),
+    // createListItem("wrk-hr-sect", "", "#wrk-hr-sect"),
     createListItem("ads-sect", "", "#ads-sect"),
     createListItem("contact-sect", "", "#contact-sect"),
   ];

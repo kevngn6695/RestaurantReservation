@@ -70,7 +70,7 @@ function Courasels(props) {
     if (autoSlide) {
       interval = setInterval(() => {
         handleNext();
-      }, 3000); // Automatically move to next card every 3 seconds
+      }, 6000); // Automatically move to next card every 3 seconds
     }
     return () => clearInterval(interval); // Clear interval on component unmount or when autoSlide changes
   }, [current, autoSlide]);

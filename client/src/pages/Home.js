@@ -35,7 +35,7 @@ function Home(props) {
             </Wrapper>
           </Container>
           <TopSpecial id={`tp-spcl-sect`} className={`hm-tp-spcl-container`} />
-          <WorkingHour id={`wrk-hr-sect`} className={`hm-wrk-hr-container`} />
+          {/* <WorkingHour id={`wrk-hr-sect`} className={`hm-wrk-hr-container`} /> */}
           <Ads id={`ads-sect`} className={`hm-ads-container`} />
           <Contact id={`contact-sect`} className={`hm-contact-container`} />
         </Container>
