@@ -1,7 +1,7 @@
 import React from "react";
 
-function Circle(props) {
+function Line(props) {
   return <div className={props.className}></div>;
 }
 
-export default React.memo(Circle);
+export default React.memo(Line);
