@@ -11,7 +11,8 @@ function Ads(props) {
   return (
     <Container id={props.id} className={props.className}>
       <Wrapper className={`ads-wrpr`}>
-        {/* <Courasels></Courasels> */}
+        {/* Put multiple pics here */}
+        <Wrapper className={`ads-pic-wrpr`}></Wrapper>
         <Wrapper className={`ads-info-wrpr`}>
           <Wrapper className={`ads-info-ttl-wrpr`}>
             <Heading className={`ads-info-ttl`} h1>
