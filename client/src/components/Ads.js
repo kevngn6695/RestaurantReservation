@@ -19,6 +19,10 @@ function Ads(props) {
               App is Available
             </Heading>
             <Paragraph className={`ads-info-paragrph`}></Paragraph>
+            <Wrapper className={`ads-info-pic-wrpr`}>
+              <Image className={`google-bdg-img`} url={``} />
+              <Image className={`apple-bdg-img`} url={``} />
+            </Wrapper>
           </Wrapper>
           <Wrapper className={`ads-ver-phone-wrpr`}>
             <Image />
