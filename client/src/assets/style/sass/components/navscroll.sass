@@ -1,9 +1,9 @@
-@import "../utils/mixin"
-@import "../colors/colors"
+@use "../utils/mixin"
+@use "../colors/colors"
 
 .nav-scroll-list
     width: 100%
-    @include flex-center(column)
+    @include mixin.flex-center(column)
 
     .nav-scroll-item
         list-style-type: none
@@ -11,11 +11,11 @@
         margin: 5px
         border: 1px solid white
         transition: all 0.5s ease-in-out
-        @include flex-center(column)
-        @include cirle-shape(10px)
+        @include mixin.flex-center(column)
+        @include mixin.cirle-shape(10px)
         &:hover
-            border: 1px solid $buff
-            @include cirle-shape(20px)
+            border: 1px solid colors.$buff
+            @include mixin.cirle-shape(20px)
         
     .nav-scroll-link
         font-size: 10px
@@ -28,8 +28,8 @@
         position: relative
         left: 2.5rem
         bottom: 0.5rem
-        @include bubble-right(30px)
-        @include flex-center(column)
+        @include mixin.bubble-right(30px)
+        @include mixin.flex-center(column)
 
 .line
     width: 50px
