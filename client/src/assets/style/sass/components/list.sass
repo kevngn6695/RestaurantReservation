@@ -1,9 +1,9 @@
-@import "../fonts/fonts.sass"
-@import "../colors/colors.sass"
-@import "../utils/mixin.sass"
+@use "../fonts/fonts.sass"
+@use "../colors/colors.sass"
+@use "../utils/mixin.sass"
 
 .nav-item-list
-    @include flex-center(row)
+    @include mixin.flex-center(row)
     
 .item
     text-decoration: none
@@ -16,4 +16,4 @@
     font-weight: bold
     transition: all 0.5s ease-in
     &:hover
-        color: $buff
+        color: colors.$buff

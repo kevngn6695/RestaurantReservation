@@ -1,4 +1,4 @@
-@import "../utils/mixin.sass"
+@use "../utils/mixin.sass"
 
 .hm-txt-container,
 .hm-tp-spcl-container,
@@ -10,7 +10,7 @@
     // border: 1px solid white
     color: white
     z-index: -1
-    @include flex-center(column)    
+    @include mixin.flex-center(column)    
 
 .nav-container
     width: 100%
@@ -19,8 +19,8 @@
     background: transparent
     top: 10px
     color: white
-    @include disable-highlight
-    @include flex-center(row)
+    @include mixin.disable-highlight
+    @include mixin.flex-center(row)
 
 .hm-nav-scroll-container
     width: 7%
@@ -31,4 +31,4 @@
     min-height: 50vh
     color: white
     z-index: 1
-    @include flex-center(columns)
+    @include mixin.flex-center(columns)

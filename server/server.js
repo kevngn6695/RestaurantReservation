@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 /* Set port number to connect server with client */
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5500;
 
 /* Initialize express js */
 const app = express();
@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  ß;
 });
 
 /* Listen to initial port */

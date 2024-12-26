@@ -1,4 +1,4 @@
-@import "../utils/mixin.sass"
+@use "../utils/mixin.sass"
     
 .nav-item-wrpr,
 .tp-spcl-carousel-wrpr, 
@@ -6,7 +6,7 @@
 .nav-auth-btn-wrpr, 
 .tp-spcl-wrpr, 
 .tp-spcl-card-wrpr
-    @include flex-center(row)
+    @include mixin.flex-center(row)
 
 .tp-spcl-pagination-wrpr,
 .tp-spcl-wrpr
@@ -23,7 +23,7 @@
     width: 80%
     min-height: 80vh
     border-radius: 40px
-    @include flex-center(row)
+    @include mixin.flex-center(row)
     transition: all 0.5s ease-in-out
     &:hover
         background: rgba( 255, 255, 255, 0.05 )
@@ -35,7 +35,7 @@
     width: 5rem
     position: absolute
     left: 5%
-    @include flex-center(colum)
+    @include mixin.flex-center(colum)
 
 .nav-item-wrpr
     width: 30%
@@ -64,13 +64,13 @@
 
 .tp-spcl-list-wrpr
     width: 60%
-    @include flex-left(column)
+    @include mixin.flex-left(column)
     
 .tp-spcl-fd-info-wrpr
     width: 80%
     bottom: 5.5rem
     padding: 15px
-    @include flex-left(column)
+    @include mixin.flex-left(column)
     
 .tp-spcl-card-wrpr
     width: 50%
@@ -80,15 +80,15 @@
     position: relative
     right: 4.5rem
     bottom: 4.5rem
-    @include flex-left(column)
+    @include mixin.flex-left(column)
     
 .tp-spcl-pagination-wrpr
     padding: 15px 0 15px 0
-    @include flex-center(colum)
+    @include mixin.flex-center(colum)
 
 .ads-wrpr
     height: 100vh
-    @include flex-center(column)
+    @include mixin.flex-center(column)
     
     
 .ads-wrpr,.ads-info-wrpr
@@ -96,11 +96,11 @@
     border: 1px solid white
     
 .ads-info-wrpr
-    @include flex-right(column)
+    @include mixin.flex-right(column)
     
 
 .ads-info-ttl-wrpr
     border: 1px solid white
     width: 50%
-    @include flex-center(column)
+    @include mixin.flex-center(column)
     
